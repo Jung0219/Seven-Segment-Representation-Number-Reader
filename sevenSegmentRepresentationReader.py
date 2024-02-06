@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 img = cv.imread(
-    r"C:\Users\OWNER\Downloads\python\OpenCV\images\sevensegmentrepresentation\clock1.jpg")
+    r"C:\Users\OWNER\Downloads\python\OpenCV\images\sevensegmentrepresentation\clock3.jpg")
 img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 gray = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
 thresh = cv.threshold(gray, 210, 255, cv.THRESH_BINARY_INV)[1]
@@ -114,6 +114,8 @@ for digit in digits:
     cv.putText(warpedImg, "{}".format(
         numberMap[display]), (x, y - 10), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 0.5, (0, 255, 0), 1)
 
+
+cv.imwrite("result3.jpg", warpedImg)
 
 plt.figure(figsize=[15, 15])
 plt.imshow(warpedImg)
